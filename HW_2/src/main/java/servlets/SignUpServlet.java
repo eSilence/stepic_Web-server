@@ -36,19 +36,19 @@ public class SignUpServlet extends HttpServlet {
             return;
         }
 
-        UserProfile profile = accountService.getUserByLogin(login);
-        if (profile != null) {
-            response.setContentType("text/html;charset=utf-8");
-            response.getWriter().println("This login already exists");
-            response.setStatus(HttpServletResponse.SC_CONFLICT);
-            return;
-        }
+//        UserProfile profile = accountService.getUserByLogin(login);
+//        if (profile != null) {
+//            response.setContentType("text/html;charset=utf-8");
+//            response.getWriter().println("This login already exists");
+//            response.setStatus(HttpServletResponse.SC_CONFLICT);
+//            return;
+//        }
 
         accountService.addNewUser(new UserProfile(login, pass));
-        Gson gson = new Gson();
-        String json = gson.toJson(accountService.getUserByLogin(login));
-        response.setContentType("application/json; charset=utf-8");
-        response.getWriter().println(json);
+        //Gson gson = new Gson();
+        //String json = gson.toJson(accountService.getUserByLogin(login));
+        //response.setContentType("application/json; charset=utf-8");
+        //response.getWriter().println(json);
         response.getWriter().println("Success registered");
         response.setStatus(HttpServletResponse.SC_OK);
 

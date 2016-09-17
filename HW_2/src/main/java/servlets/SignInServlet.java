@@ -27,10 +27,10 @@ public class SignInServlet extends HttpServlet {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         } else {
-            Gson gson = new Gson();
-            String json = gson.toJson(profile);
+            //Gson gson = new Gson();
+            //String json = gson.toJson(profile);
             response.setContentType("application/json; charset=utf-8");
-            response.getWriter().println(json);
+            //response.getWriter().println(json);
             response.setStatus(HttpServletResponse.SC_OK);
         }
     }
@@ -51,14 +51,15 @@ public class SignInServlet extends HttpServlet {
         if (profile == null || !profile.getPass().equals(pass)) {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().println("Unauthorized");
             return;
         }
 
         accountService.addSession(request.getSession().getId(), profile);
-        Gson gson = new Gson();
-        String json = gson.toJson(profile);
-        response.setContentType("application/json; charset=utf-8");
-        response.getWriter().println(json);
+        //Gson gson = new Gson();
+        //String json = gson.toJson(profile);
+        response.setContentType("text/html;charset=utf-8");
+        //response.getWriter().println(json);
         response.getWriter().println("Authorized: "+login);
         response.setStatus(HttpServletResponse.SC_OK);
     }
