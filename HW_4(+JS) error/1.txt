@@ -1,0 +1,10 @@
+Маккоу А. Веб-приложения на JavaScript
+стр 128
+
+http://www.ibm.com/developerworks/ru/library/wa-reverseajax2/index.html
+
+https://habrahabr.ru/post/128380/
+
+http://htmlhook.ru/html5-websockets.html
+
+http://www.apofig.com/2014/03/maven-jetty-websocket-server-sample.html
